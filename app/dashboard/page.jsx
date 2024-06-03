@@ -3,6 +3,7 @@ import React,{useState} from 'react';
 import {  encrypt, decrypt  } from './crypto.js'
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input.jsx';
+import { toast } from 'sonner';
 const Dashboard = () => {
     const [input, setInput] = useState('');
     const [encrypted, setEncrypted] = useState('');
@@ -30,13 +31,24 @@ const Dashboard = () => {
         setError(err.message);
       }
     };
+
+    const copyToClipboard = () => {
+      navigator.clipboard.writeText(encrypted)
+        .then(() => {
+          toast('Text copied to clipboard');
+        })
+        .catch((err) => {
+          toast('Could not copy text: ', err);
+        });
+    };
+    
   
 
   return (
     <>
       <div className='flex gap-2 items-center justify-center'>
       <div className='flex flex-col items-center justify-center'>
-      <h1 className='mt-20 text-purple-400 bg-clip-text text-3xl font-extrabold text-transparent sm:text-5xl hover:bg-primary hover:opacity-90 transition-opacity'>Blowfish Encryption/Decryption</h1>
+      <h1 className='mt-20 text-black text-3xl font-extrabold text-transparent sm:text-5xl hover:opacity-90 transition-opacity'>Blowfish Encryption/Decryption</h1>
       {error && <p style={{ color: 'red' }}>{error}</p>}
       <div className='mt-4'>
         <Input
@@ -54,6 +66,10 @@ const Dashboard = () => {
       <div style={{ marginBottom: '10px' }}>
         <h3>Encrypted Text:</h3>
         <p>{encrypted}</p>
+
+        {encrypted && (
+        <Button variant="ghost" onClick={copyToClipboard}>Copy</Button>
+      )}
       </div>
       <div>
         <h3>Decrypted Text:</h3>

@@ -6,7 +6,7 @@ const Hero = () => {
   <div className="mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-screen lg:items-center ">
     <div className="mx-auto max-w-6xl text-center">
       <h1
-        className="bg-white bg-clip-text text-6xl font-extrabold text-transparent sm:text-6xl"
+        className="text-white text-6xl font-extrabold text-transparent sm:text-6xl"
       >
         Secure Your Password.
 
