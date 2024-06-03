@@ -63,7 +63,7 @@ const Dashboard = () => {
         <Button bg="primary" onClick={handleEncrypt} style={{ marginRight: '10px' }}>Encrypt</Button>
         <Button variant="destructive" onClick={handleDecrypt}>Decrypt</Button>
       </div>
-      <div style={{ marginBottom: '10px' }}>
+      <div className='flex items-center gap-2' style={{ marginBottom: '10px' }}>
         <h3>Encrypted Text:</h3>
         <p>{encrypted}</p>
 
