@@ -48,7 +48,7 @@ const Dashboard = () => {
     <>
       <div className='flex gap-2 items-center justify-center'>
       <div className='flex flex-col items-center justify-center'>
-      <h1 className='mt-20 text-black text-3xl font-extrabold text-transparent sm:text-5xl hover:opacity-90 transition-opacity'>Blowfish Encryption/Decryption</h1>
+      <h1 className='mt-20 text-black text-4xl font-extrabold  sm:text-5xl'>Blowfish Encryption/Decryption</h1>
       {error && <p style={{ color: 'red' }}>{error}</p>}
       <div className='mt-4'>
         <Input
