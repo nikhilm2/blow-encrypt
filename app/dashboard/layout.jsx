@@ -6,8 +6,8 @@ const DashboardLayout = ({children}) => {
   return (
     <SignedIn>
     <div>
-      <div className='md:w-64 fixed'><SideNav/></div>
-      <div className='md:ml-64'>
+      
+      <div className='md:ml-30'>
       {children}
       </div>
       
