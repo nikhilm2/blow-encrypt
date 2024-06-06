@@ -1,5 +1,6 @@
 // lib/blowfish.js
 import CryptoJS from 'crypto-js';
+import { toast } from 'sonner';
 
 const key = process.env.NEXT_PUBLIC_BLOWFISH_KEY;
 
@@ -22,6 +23,8 @@ export const decrypt = (ciphertext) => {
     }
     return decryptedText;
   } catch (error) {
-    throw new Error('Invalid encrypted text or decryption key');
+
+    toast.error('Invalid encrypted text or decryption key');
+    console.log(error)
   }
 };
