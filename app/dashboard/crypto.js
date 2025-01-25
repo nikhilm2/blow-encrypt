@@ -1,6 +1,7 @@
 // lib/blowfish.js
 import CryptoJS from 'crypto-js';
 import { toast } from 'sonner';
+import Blowfish from './blowfish'
 
 const key = process.env.NEXT_PUBLIC_BLOWFISH_KEY;
 

@@ -14,7 +14,7 @@ const Header = () => {
         <Link href={"/"}><Image src={"/logo.svg"} width={50} height={50} alt='logo' /></Link>
 
         <div className='flex gap-2'>
-          <Link href={"/team"}><Button variant="ghost">Team</Button></Link>
+          
           {isSignedIn ? (
             <>
               <Link href={"/dashboard"}><Button>Dashboard</Button></Link>

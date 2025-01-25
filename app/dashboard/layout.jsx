@@ -1,5 +1,6 @@
 import { SignedIn } from '@clerk/nextjs'
 import React from 'react'
+import SideNav from './_components/SideNav'
 
 
 const DashboardLayout = ({children}) => {
@@ -7,7 +8,10 @@ const DashboardLayout = ({children}) => {
     <SignedIn>
     <div className='h-screen '>
       
-      <div className='md:ml-30'>
+      <div className='md:w-64 fixed'>
+        <SideNav/>
+      </div>
+      <div className='md:ml-64'>
       {children}
       </div>
       
